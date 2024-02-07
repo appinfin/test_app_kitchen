@@ -19,7 +19,15 @@ const geometry2 = new THREE.BoxGeometry( .5, 1, 1 );
 const material2 = new THREE.MeshBasicMaterial( {color: 0xcccccc} );
 // material2.color = new THREE.Color(0xff0000);
 const cube = new THREE.Mesh( geometry2, material2 ); 
-scene.add( cube );
+// scene.add( cube );
+
+const wireframe = new THREE.WireframeGeometry( geometry2 );
+const line = new THREE.LineSegments( wireframe );
+line.material.color = new THREE.Color(0x505050)
+// line.material.depthTest = false;
+// line.material.opacity = 0.25;
+// line.material.transparent = true;
+scene.add( line );
 
 // // Materials
 // const material = new THREE.MeshBasicMaterial()
